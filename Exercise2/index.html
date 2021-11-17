@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<HTML>
+	<head>
+		<title>EECS 448 Exercise 2</title>
+	</head>
+	<body>
+		<h1 style="position:absolute; left:690px;">SLIDESHOW!</h1>
+		<button type="button" id="left" onclick="leftClick();" style="position:absolute; left:400px; top:320px; height:70px;"/>&lt;Left</button>
+		<img src="images/1.jpg" id="slideshow" style="position:absolute; left:450px; top:100px;" width="720" height="470">
+		<button type="button" id = "right" onclick="rightClick();" style="position:absolute; left:1180px; top:320px; height:70px;">Right&gt;</button>
+		
+		<script>
+			let count  = 1
+			let imgName;
+			let imgTag = document.getElementById("slideshow");
+
+			function leftClick(){
+				if(count == 1){
+					count = 5;
+					console.log(count);
+				}else{
+					count--;
+					console.log(count);
+				}
+				imgName = "images/" + count + ".jpg";
+				imgTag.src=imgName;
+				console.log("hi");
+			}
+			
+			function rightClick(){
+				if(count == 5){
+					count = 1;
+				}else{
+					count++;
+				}
+				imgName = "images/" + count + ".jpg";
+				imgTag.src=imgName;
+				console.log("hi");
+			}
+		</script>
+	</body>
+</HTML>

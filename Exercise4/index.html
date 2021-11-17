@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+	    <title> EECS 448 Exercise 4 </title>
+        <link href="design.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h3>Color values in RGB [00-FF]</h3>
+        <label>Border</label><br><br>
+        <input type="text" placeholder="Type in a value for R" id="rBorder" name="R"><br><br>
+        <input type="text" placeholder="Type in a value for G" id="gBorder" name="G"><br><br>
+        <input type="text" placeholder="Type in a value for B" id="bBorder" name="B"><br><br>
+        <label>Background</label><br><br>
+        <input type="text" placeholder="Type in a value for R" id="rBack" name="R"><br><br>
+        <input type="text" placeholder="Type in a value for G" id="gBack" name="G"><br><br>
+        <input type="text" placeholder="Type in a value for B" id="bBack" name="B"><br><br>
+        <button id="changeBtn" onclick="applyChanges();">Apply Changes</button><br><br>
+
+        <p id="paragraph" style="position:absolute; left:400px; top:150px">
+            One day a frog left the pond of the village and hopped to a lake in a nearby forest.<br />
+            He went to the forest to make his new home there. When he reached there he did not see anyone around.<br />
+            He wanted to meet everyone and make new friends. So the frog climbed a high rock by the lake and said,<br />
+            "Friends, please come here.I am new here. I want to meet all of you. I have come from the village.<br />
+            "Many animals heard his voice and came to the lake. The deer, the tortoise, the duck, the rabbit,<br />
+            the birds, the squirrel, the butterfly and the fox came there.The frog said, "Let me introduce myself.<br />
+            I am Dr. Croaky. I am a doctor who can cure any ailment that you might be suffering from.<br />
+            I have medicines for all animals’ diseases. You can come to meet me anytime."Hearing this, the fox said,<br />
+            "If you can cure everyone then why haven't you cured your lame legs?See how you keep hopping around all the time."<br />
+            All the animals and birds laughed at the frog. The frog went red with shame for his lie had been detected.<br />
+        </p>
+
+        <script>
+            function applyChanges() {
+                let paragraph = document.getElementById("paragraph");
+                let rBorder = document.getElementById("rBorder").value;
+                let gBorder = document.getElementById("gBorder").value;
+                let bBorder = document.getElementById("bBorder").value;
+                let rBack = document.getElementById("rBack").value;
+                let gBack = document.getElementById("gBack").value;
+                let bBack = document.getElementById("bBack").value;
+
+                let borderColor = "#" + rBorder + gBorder + bBorder;
+                let backColor = "#" + rBack + gBack + bBack;
+
+                paragraph.style.borderColor = borderColor;
+                paragraph.style.backgroundColor = backColor;
+                console.log(borderColor);
+                console.log(backColor);
+            }
+        </script>
+    </body>
+</HTML>

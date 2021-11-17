@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<HTML>
+	<head>
+		<title> EECS 448 Exercise 1 </title>
+	</head>
+	<body>
+		<h1>Password Validator</h1>
+		<form>
+		  <label for="fname">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPassword:<t></label>
+		  <input type="password" placeholder="Type in a password" id="password" name="password"><br><br>
+		  <label for="lname">Confirm Password:</label>
+		  <input type="password" placeholder="Confirm your password" id="passwordValidate" name="passwordValidate"><br><br>
+		  <button type="button" id = "submit" onclick="validate();">Validate</button>
+		  
+		  <script>
+			function validate(){
+				let userInput = document.getElementById("password").value;
+				let validateInput = document.getElementById("passwordValidate").value;
+				
+				if(userInput != validateInput){
+					alert("Passwords do not match!");
+				}
+				else if( (userInput.length < 8) || (validateInput.length < 8) ){
+					alert("Password must be at least 8 characters long!");
+					console.log(userInput.length);
+					console.log(validateInput.length);
+				}
+				else{
+					alert("Passwords validated successfully");
+				}
+			}
+		</script>
+		</form>
+	</body>
+</HTML>
